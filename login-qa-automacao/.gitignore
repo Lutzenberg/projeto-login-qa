@@ -1,0 +1,4 @@
+login-qa-automacao/target/
+.vscode/
+.idea/
+*.class
