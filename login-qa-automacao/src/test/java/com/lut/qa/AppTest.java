@@ -38,4 +38,31 @@ public class AppTest {
 
         driver.quit();
     }
+
+    @Test
+    public void deveMostrarErroComLoginInvalido() throws InterruptedException {
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("http://127.0.0.1:5501/login-qa/index.html");
+
+        driver.findElement(By.id("email"))
+                .sendKeys("teste@gmail.com");
+
+        driver.findElement(By.id("password"))
+                .sendKeys("123");
+
+        driver.findElement(By.tagName("button"))
+                .click();
+
+        Thread.sleep(3000);
+
+        String mensagem = driver.findElement(By.id("message"))
+                .getText();
+
+        Assert.assertEquals(
+                "E-mail ou senha inválidos. Verifique e tente novamente.",
+                mensagem);
+
+        driver.quit();
+    }
 }
