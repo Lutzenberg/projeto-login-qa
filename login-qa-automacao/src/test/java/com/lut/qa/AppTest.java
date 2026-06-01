@@ -19,35 +19,33 @@ public class AppTest {
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
+        LoginPage loginPage = new LoginPage(driver);
+
         driver.get("http://127.0.0.1:5501/login-qa/index.html");
 
         wait.until(
                 ExpectedConditions.visibilityOfElementLocated(
                         By.id("email")));
 
-        driver.findElement(By.id("email"))
-                .sendKeys("teste@gmail.com");
+        loginPage.preencherEmail("teste@gmail.com");
 
         wait.until(
                 ExpectedConditions.visibilityOfElementLocated(
                         By.id("password")));
 
-        driver.findElement(By.id("password"))
-                .sendKeys("123456");
+        loginPage.preencherSenha("123456");
 
         wait.until(
                 ExpectedConditions.elementToBeClickable(
                         By.tagName("button")));
 
-        driver.findElement(By.tagName("button"))
-                .click();
+        loginPage.clicarEntrar();
 
         wait.until(
                 ExpectedConditions.visibilityOfElementLocated(
                         By.id("message")));
 
-        String mensagem = driver.findElement(By.id("message"))
-                .getText();
+        String mensagem = loginPage.obterMensagem();
 
         System.out.println(mensagem);
 
@@ -65,23 +63,21 @@ public class AppTest {
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
+        LoginPage loginPage = new LoginPage(driver);
+
         driver.get("http://127.0.0.1:5501/login-qa/index.html");
 
-        driver.findElement(By.id("email"))
-                .sendKeys("teste@gmail.com");
+        loginPage.preencherEmail("teste@gmail.com");
 
-        driver.findElement(By.id("password"))
-                .sendKeys("123");
+        loginPage.preencherSenha("123");
 
-        driver.findElement(By.tagName("button"))
-                .click();
+        loginPage.clicarEntrar();
 
         wait.until(
                 ExpectedConditions.visibilityOfElementLocated(
                         By.id("message")));
 
-        String mensagem = driver.findElement(By.id("message"))
-                .getText();
+        String mensagem = loginPage.obterMensagem();
 
         Assert.assertEquals(
                 "E-mail ou senha inválidos. Verifique e tente novamente.",
