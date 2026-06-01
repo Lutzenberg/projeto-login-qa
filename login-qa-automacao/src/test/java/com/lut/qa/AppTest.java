@@ -6,6 +6,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.time.Duration;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
 public class AppTest {
 
     @Test
@@ -13,25 +17,40 @@ public class AppTest {
 
         WebDriver driver = new ChromeDriver();
 
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
         driver.get("http://127.0.0.1:5501/login-qa/index.html");
 
-        Thread.sleep(3000);
+        wait.until(
+                ExpectedConditions.visibilityOfElementLocated(
+                        By.id("email")));
 
-        driver.findElement(By.id("email")).sendKeys("teste@gmail.com");
+        driver.findElement(By.id("email"))
+                .sendKeys("teste@gmail.com");
 
-        Thread.sleep(3000);
+        wait.until(
+                ExpectedConditions.visibilityOfElementLocated(
+                        By.id("password")));
 
-        driver.findElement(By.id("password")).sendKeys("123456");
+        driver.findElement(By.id("password"))
+                .sendKeys("123456");
 
-        Thread.sleep(3000);
+        wait.until(
+                ExpectedConditions.elementToBeClickable(
+                        By.tagName("button")));
 
-        driver.findElement(By.tagName("button")).click();
+        driver.findElement(By.tagName("button"))
+                .click();
 
-        Thread.sleep(10000);
+        wait.until(
+                ExpectedConditions.visibilityOfElementLocated(
+                        By.id("message")));
+
         String mensagem = driver.findElement(By.id("message"))
                 .getText();
 
         System.out.println(mensagem);
+
         Assert.assertEquals(
                 "Login realizado com sucesso! 🚀",
                 mensagem);
@@ -41,7 +60,10 @@ public class AppTest {
 
     @Test
     public void deveMostrarErroComLoginInvalido() throws InterruptedException {
+
         WebDriver driver = new ChromeDriver();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         driver.get("http://127.0.0.1:5501/login-qa/index.html");
 
@@ -54,7 +76,9 @@ public class AppTest {
         driver.findElement(By.tagName("button"))
                 .click();
 
-        Thread.sleep(3000);
+        wait.until(
+                ExpectedConditions.visibilityOfElementLocated(
+                        By.id("message")));
 
         String mensagem = driver.findElement(By.id("message"))
                 .getText();
