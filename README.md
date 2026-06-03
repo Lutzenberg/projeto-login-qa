@@ -20,7 +20,7 @@ login.feature - Cenários escritos em Gherkin
 
 Cenários Automatizados
 
-Login válido
+`Login válido`
 
 * Acessar a tela de login
 * Informar e-mail válido
