@@ -27,7 +27,7 @@ Cenários Automatizados
 * Informar senha válida
 * Validar mensagem de sucesso
 
-`Login inválido`
+`Login inválido
 
 * Acessar a tela de login
 * Informar e-mail válido
