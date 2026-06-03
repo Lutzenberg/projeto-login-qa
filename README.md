@@ -4,14 +4,7 @@ Projeto de automação de testes desenvolvido para praticar Java, Maven, Seleniu
 
 Ferramentas Utilizadas
 
-Java 21.
-Maven
-Selenium WebDriver
-JUnit 4
-Cucumber
-Page Object Model (POM)
-Git
-GitHub
+Java 21, Maven, Selenium, WebDriver, JUnit 4, Cucumber, Page Object Model (POM),Git e GitHub
 
 Estrutura do Projeto
 
@@ -46,15 +39,6 @@ Como executar
 Abra o terminal na raiz do projeto e execute:
 
 mvn test
-
-Ferramentas aplicadas no projeto
-
-Selenium WebDriver
-JUnit
-Maven
-Cucumber
-Page Object Model (POM)
-Git e GitHub
 
 Autor
 Desenvolvido por Lutzenberg para estudos e prática de automação de testes com Java, Selenium, JUnit e Cucumber.
