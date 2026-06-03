@@ -20,14 +20,14 @@ login.feature - Cenários escritos em Gherkin
 
 Cenários Automatizados
 
-# Login válido
+Login válido
 
 * Acessar a tela de login
 * Informar e-mail válido
 * Informar senha válida
 * Validar mensagem de sucesso
 
-# Login inválido
+`Login inválido`
 
 * Acessar a tela de login
 * Informar e-mail válido
@@ -38,7 +38,7 @@ Como executar
 
 Abra o terminal na raiz do projeto e execute:
 
-'mvn test'
+`mvn test`
 
 Autor
 Desenvolvido por Lutzenberg para estudos e prática de automação de testes com Java, Selenium, JUnit e Cucumber.
