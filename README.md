@@ -2,7 +2,7 @@ Projeto Login QA Automação
 
 Projeto de automação de testes desenvolvido para praticar Java, Maven, Selenium WebDriver, JUnit, Cucumber e Page Object Model (POM).
 
-Tecnologias Utilizadas
+Ferramentas Utilizadas
 
 Java 21
 Maven
