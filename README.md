@@ -38,7 +38,7 @@ Como executar
 
 Abra o terminal na raiz do projeto e execute:
 
-test mvn
+mvn test
 
 Autor
 Desenvolvido por Lutzenberg para estudos e prática de automação de testes com Java, Selenium, JUnit e Cucumber.
