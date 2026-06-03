@@ -4,7 +4,7 @@ Projeto de automação de testes desenvolvido para praticar Java, Maven, Seleniu
 
 Ferramentas Utilizadas
 
-Java 21, Maven, Selenium, WebDriver, JUnit 4, Cucumber, Page Object Model (POM),Git e GitHub
+Java21, Maven, Selenium, WebDriver, JUnit 4, Cucumber, Page Object Model (POM),Git e GitHub
 
 Estrutura do Projeto
 
