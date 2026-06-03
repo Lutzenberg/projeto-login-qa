@@ -42,4 +42,27 @@ public class LoginSteps {
 
         driver.quit();
     }
+
+    @Quando("informo uma senha inválida")
+    public void informoUmaSenhaInvalida() {
+
+        loginPage.preencherEmail("teste@gmail.com");
+
+        loginPage.preencherSenha("123");
+
+        loginPage.clicarEntrar();
+    }
+
+    @Entao("devo visualizar uma mensagem de erro")
+    public void devoVisualizarUmaMensagemDeErro() {
+
+        String mensagem = loginPage.obterMensagem();
+
+        Assert.assertEquals(
+                "E-mail ou senha inválidos. Verifique e tente novamente.",
+                mensagem);
+
+        driver.quit();
+    }
+
 }
