@@ -4,7 +4,7 @@ Projeto de automação de testes desenvolvido para praticar Java, Maven, Seleniu
 
 Ferramentas Utilizadas
 
-Java21
+Java 21.
 Maven
 Selenium WebDriver
 JUnit 4
